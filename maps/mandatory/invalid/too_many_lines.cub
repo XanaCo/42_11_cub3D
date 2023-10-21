@@ -1,0 +1,15 @@
+NO  ./img/XPM/walls/W_WH_NO.xpm
+SO  ./img/XPM/walls/W_WH_SO.xpm
+WE  ./img/XPM/walls/W_WH_WE.xpm
+EA  ./img/XPM/walls/W_WH_EA.xpm
+
+F   55,50,5
+C   18,18,18
+
+111111
+100001
+100N01
+111111
+
+
+

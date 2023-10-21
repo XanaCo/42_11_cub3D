@@ -1,0 +1,25 @@
+NO  ./img/XPM/walls/W_WH_NO.xpm
+SO  ./img/XPM/walls/W_WH_SO.xpm
+WE  ./img/XPM/walls/W_WH_WE.xpm
+EA  ./img/XPM/walls/W_WH_EA.xpm
+
+PNS  ./img/XPM/doors/DO_destruct_N_S-01.xpm
+PWE  ./img/XPM/doors/DO_destruct_W_E-01.xpm
+ELE  ./img/XPM/doors/ELE.xpm
+
+B ./img/XPM/doors/DO_BearS.xpm
+X ./img/XPM/doors/DO_237_01.xpm
+
+T ./img/XPM/characters/C_Twins_01.xpm
+D ./img/XPM/characters/DAN_01.xpm
+
+F ./img/XPM/floor/FL_RedCarpet.xpm
+C           ./img/XPM/ceiling/C_WH.xpm
+
+111111
+100001
+100N01
+111111
+
+
+

@@ -1,0 +1,24 @@
+NO       ./img/XPM/wall			s/W_WH_NO.xpm
+  
+       
+
+SO  ./img/		XPM/walls/   W_WH_SO.xpm   
+WE  	./img/XP      M/walls/W_WH_WE.xpm
+
+EA  ./img/	XPM/	wal      ls/W_WH_EA.xpm 
+
+
+F   13 9,0,0	
+
+
+       
+
+
+
+C   23     5,2 2  8,    228
+
+111
+ 101
+10001
+ 1N1
+  1
