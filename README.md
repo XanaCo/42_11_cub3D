@@ -1,4 +1,3 @@
-
 <div align=center>
 <img src=https://github.com/Xanaco/42_00_Ressources/blob/main/cub3dm.png alt=Xanaco's 42Project Badge/>
 <h2>Final score</h2>
@@ -11,46 +10,214 @@ This is a group project, made with <3 with [@albibou](https://github.com/albibou
 
 All graphics are made by us. Pixel art characters and end animation by awesome [Gwendal Uguen](https://www.flickr.com/photos/gwendalcentrifugue)
 
-## Overview
+---
 
-The "cub3d" project, inspired by the classic game "Wolfenstein 3D", is an exciting venture into the world of graphics programming. Students embark on the journey of creating a "ray-casting" engine, replicating the style of the aforementioned game. The task involves creating a dynamic view inside a maze, where walls, sprites, and other elements have distinct positions and appearances. The primary goal is to craft a realistic three-dimensional view in a two-dimensional maze, leveraging the MiniLibX library.
+## Installation
+
+### Prerequisites
+Make sure all dependencies are installed on your system, may vary depending on your distribution.
+
+### Build
+```
+git clone https://github.com/youruser/yourrepo.git
+cd Cub3D
+make && make bonus
+```
+
+### Run
+For the mandatory part:
+```
+./cub3D  maps/mandatory/valid/choose-one-file-here
+```
+For the bonus part:
+```
+./cub3D_bonus maps/bonus/valid/choose-one-file-here
+```
+
+# CUB3D (mini) Bible
 
 <div align=center>
-<img src=https://github.com/Xanaco/42_00_Ressources/blob/main/screenshots/CUB3D_Title.png alt=Xanaco's 42Project Score/>
-<img src=https://github.com/Xanaco/42_00_Ressources/blob/main/screenshots/CUB3D_Start.png alt=Xanaco's 42Project Score/>
-<img src=https://github.com/Xanaco/42_00_Ressources/blob/main/screenshots/CUB3D_Danny.png alt=Xanaco's 42Project Score/>
+<img src=https://github.com/Xanaco/42_00_Ressources/blob/main/screenshots/Cub3D_Title.png alt=CUB3D Title Screenshot/>
 </div>
 
-## Key Components
+This project is a school exercise at 42 Paris, designed as a simple raycaster to practice C programming.  
+It transformed into a prototype game inspired by retro FPS such as *Wolfenstein 3D*, adding mechanics, a narrative, and interactive elements.  
 
-1. **Ray-Casting Technique**: The core of the project, ray-casting is a technique used to determine the visibility of surfaces, emulating a 3D perspective.
+As a school project, several features remain basic or unfinished, and there is room for refinement and expansion.  
+The purpose of this document is to present the core concept and mechanics, while acknowledging that further polish (marked with `*`) would be necessary for a more complete version.  
 
-2. **Game Map Parsing**: Students are required to read and validate game maps from files, processing information about wall positions, player starting position, and more.
+---
 
-3. **Graphics Rendering**: Using the MiniLibX library to render the game environment, including walls, floors, ceilings, and sprites.
+## Table of Contents
+- [Project Scope](#-project-scope)
+- [Concept](#-concept)
+- [Gameplay Loop](#-gameplay-loop)
+- [Controls](#-controls)
+- [End Game](#-end-game)
+- [Playable Character](#-playable-character)
+- [Story](#-story)
+- [Actors (NPCs & Environment)](#-actors-npcs--environment)
+  - [The Overlook Hotel](#-the-overlook-hotel-environmentantagonist-)
+  - [Danny Torrance](#-danny-torrance-pursuer)
+  - [The Grady Twins](#-the-grady-twins-controllers)
+- [Areas](#️-areas)
+- [Gamefeel & Feedback](#-gamefeel--feedback-)
+- [Objectives & Aesthetics (MDA)](#-objectives--aesthetics-mda)
 
-4. **Player Movements**: Implementing controls for the player to move and rotate within the maze, altering the visual perspective as necessary.
+---
 
-5. **Texture Mapping**: Applying textures to walls and objects to make the environment more lifelike.
+## Project Scope
 
-6. **Sprite Rendering**: Incorporating interactive or static sprites into the environment, ensuring they are drawn to scale and positioned correctly relative to walls and the player.
+<div align="center" style="display: flex; justify-content: center; gap: 20px;">
+  <figure style="text-align: center;">
+    <img src="https://github.com/Xanaco/42_00_Ressources/blob/main/screenshots/Cub3D_Mandatory.png" alt="Area1" width="45%">
+    <figcaption><b>Mandatory Project</b></figcaption>
+  </figure>
 
-7. **Error Handling**: Ensuring robust error handling to manage invalid maps, missing assets, or other potential game-related issues.
+  <figure style="text-align: center;">
+    <img src="https://github.com/Xanaco/42_00_Ressources/blob/main/screenshots/Cub3D_Bonus.png" alt="Area2" width="45%">
+    <figcaption><b>Bonus Project</b></figcaption>
+  </figure>
+</div>
 
-## Key Skills Developed
 
-1. **Graphics Programming**: Dive deep into the intricacies of ray-casting and 3D rendering in a 2D environment, laying a foundation for more complex graphics projects.
+---
 
-2. **File Parsing**: Develop parsing skills, ensuring that game maps are read, validated, and processed correctly.
+## Concept
+A retro FPS inspired by *Wolfenstein 3D*, set in the universe of *The Shining*.  
 
-3. **Problem Solving**: The project poses various challenges, from rendering walls correctly based on player position to handling sprite overlap, all requiring analytical thinking.
+The player takes control of **Jack Torrance**, navigating the haunted Overlook Hotel in search of the mysterious **Room 237**. Armed with an axe, Jack must break through doors, evade hostile characters, and survive the labyrinthine corridors before time runs out.
 
-4. **Texture Mapping**: Gain hands-on experience in mapping textures onto surfaces, essential for realism in graphics projects.
+- **Genre:** Retro FPS / Exploration / Puzzle-Horror  
+- **Target Platform:** Linux (prototype)  
+- **Target Audience:** Players who enjoy horror, exploration, and puzzle-infused FPS experiences.
+ 
 
-5. **User Input Handling**: Implement and manage user controls, allowing seamless navigation and interaction within the game environment.
+<div align=center>
+<img src=https://github.com/Xanaco/42_00_Ressources/blob/main/screenshots/Cub3D_Jack.png alt=Screenshot width=60%/>
+</div>
 
-6. **Optimization**: Achieving smooth rendering and movements necessitates efficient algorithms and resource management.
+> *“I wonder where the room 237 is?”*
 
-7. **Attention to Detail**: Given the precision required in graphics rendering, meticulous attention to detail becomes paramount.
+---
 
-8. **Basis of Game Development**: This project serves as an introduction to core game development concepts, such as game loops, rendering, and player interaction.
+## Gameplay Loop
+1. Explore the Overlook Hotel maze.  
+2. Break doors with the axe to progress.  
+3. Avoid or escape NPCs who hinder movement.  
+4. Find the final Room 237 door before being caught.  
+
+<div align=center>
+<img src=https://github.com/Xanaco/42_00_Ressources/blob/main/screenshots/Cub3D_Explore.png alt=Screenshot1 width=30%/>
+<img src=https://github.com/Xanaco/42_00_Ressources/blob/main/screenshots/Cub3D_TwinsAnim.png alt=Screenshot2 width=30%/>
+<img src=https://github.com/Xanaco/42_00_Ressources/blob/main/screenshots/Cub3D_Porte237.png alt=Screenshot3 width=30%/>
+</div>
+
+---
+
+## Controls
+- **Movement:** `WASD` / Arrow keys  
+- **Look/Turn:** Mouse  
+- **Axe:**  
+  - `1` → Equip axe  
+  - `2` → Holster axe  
+  - `SPACE` → Swing axe  
+- **End Game:**  
+  - `ESC` or `Q` → Quit game and free memory  
+
+A small reminder screen will appear on launch in terminal, displaying title and controls.
+
+<div align=center>
+<img src=https://github.com/Xanaco/42_00_Ressources/blob/main/screenshots/Cub3D_Porte1.png alt=Screenshot4 width=30%/>
+<img src=https://github.com/Xanaco/42_00_Ressources/blob/main/screenshots/Cub3D_Porte2.png alt=Screenshot5 width=30%/>
+<img src=https://github.com/Xanaco/42_00_Ressources/blob/main/screenshots/Cub3D_Porte3.png alt=Screenshot6 width=30%/>
+</div>
+
+> You can break the doors with the axe and see through.  
+
+---
+
+## End Game
+- **User Abort:** Player quits manually (`ESC` / `Q` / Window). Game exits and cleans memory.  
+- **Victory:** Player reaches **Room 237** and triggers pixel-art animation ending.  
+
+<div align=center>
+<img src=https://github.com/Xanaco/42_00_Ressources/blob/main/screenshots/Cub3D_EndGame.png alt=EndGameScreenshot width=75%/>
+</div>
+
+---
+
+## Playable Character
+**John Daniel Edward "Jack" Torrance**  
+- **Age:** 42  
+- **Height/Weight:** 5’9.5” / 154 lbs  
+- **Appearance:** Muscular, attractive, but with disturbingly intense eyes.  
+- **Backstory:** A failed writer and ex-teacher, burdened by financial struggles, alcoholism, and family pressures. Now trapped in the Overlook, he descends into madness.  
+- **Ability:** Can destroy doors with his axe to progress.  
+
+---
+
+## Story
+You play as Jack Torrance, attempting to escape the Overlook Hotel by finding the legendary **Room 237**.  
+Armed only with an axe, you must demolish doors under time pressure, while avoiding supernatural forces and family members who try to stop you.  
+
+---
+
+## Actors (NPCs & Environment)
+
+### The Overlook Hotel (Environment/Antagonist) `*`
+- Built in 1907, cursed by decades of murders and suicides.  
+- Acts as an **active enemy**: shifting corridors, closing doors, and supernatural manifestations that block Jack’s path.  
+
+### Danny Torrance (Pursuer)
+- A 5-year-old with overwhelming psychic powers (*“the Shining”*).  
+- If Danny spots you, he will relentlessly follow, slowing your progress and increasing tension.  
+
+### The Grady Twins (Controllers)
+- Ghostly twin girls appearing suddenly in corridors.  
+- If they catch you, Jack becomes frozen in place for a few seconds, vulnerable to other threats.  
+
+<div align=center>
+<img src=https://github.com/Xanaco/42_00_Ressources/blob/main/screenshots/Cub3D_Overlook.png alt=Actor1 width=30%/>
+<img src=https://github.com/Xanaco/42_00_Ressources/blob/main/screenshots/Cub3D_Danny.png alt=Actor2 width=30%/>
+<img src=https://github.com/Xanaco/42_00_Ressources/blob/main/screenshots/Cub3D_Twins.png alt=Actor3 width=30%/>
+</div>
+
+---
+
+## Areas
+- **Overlook Ground Floor (Labyrinth):** Maze-like hallways, locked doors, flickering lights.  
+- **Typical Room:** An extra zone to explore.
+
+<div align=center>
+<img src=https://github.com/Xanaco/42_00_Ressources/blob/main/screenshots/Cub3D_OverlookGF.png alt=Area1 width=45%/>
+<img src=https://github.com/Xanaco/42_00_Ressources/blob/main/screenshots/Cub3D_TypicalRoom.png alt=Area2 width=45%/>
+</div>
+
+---
+
+## Gamefeel & Feedback `*`
+- **Axe:** Heavy sound on swing/impact, screen shake, splinters when breaking doors.  
+- **Enemies:**  
+  - Danny’s psychic whispers intensify as he approaches.  
+  - The twins trigger a chilling freeze-frame effect with echoing laughter.  
+- **Environment:**  
+  - Distant screams, flickering lights, doors slamming shut.  
+  - Subtle heartbeat sound when health is low.  
+
+---
+
+## Objectives & Aesthetics (MDA)
+- **Mechanics:** Door destruction, NPC avoidance, timed escape.  
+- **Dynamics:** Resource pressure (time), stealth vs. confrontation, escalating tension.  
+- **Aesthetics:**  
+  - **Horror:** constant paranoia, hotel as an enemy.  
+  - **Challenge:** navigating maze + time pressure.  
+  - **Discovery:** exploration of iconic spaces.  
+  - **Sensation:** fear, urgency, thrill of destruction.  
+
+<div align=center>
+<img src=https://github.com/Xanaco/42_00_Ressources/blob/main/screenshots/Cub3D_EasterEgg.png alt=MDA width=75%/>
+</div>
+
+---
