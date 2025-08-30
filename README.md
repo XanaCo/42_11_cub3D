@@ -19,7 +19,7 @@ Make sure all dependencies are installed on your system, may vary depending on y
 
 ### Build
 ```
-git clone https://github.com/youruser/yourrepo.git
+git clone git@github.com:XanaCo/42_11_cub3D.git Cub3D
 cd Cub3D
 make && make bonus
 ```
@@ -37,7 +37,7 @@ For the bonus part:
 # CUB3D (mini) Bible
 
 <div align=center>
-<img src=https://github.com/Xanaco/42_00_Ressources/blob/main/screenshots/Cub3D_Title.png alt=CUB3D Title Screenshot/>
+<img src=https://github.com/Xanaco/42_00_Ressources/blob/main/screenshots/Cub3D_StartScreen.png alt=CUB3D Title Screenshot/>
 </div>
 
 This project is a school exercise at 42 Paris, designed as a simple raycaster to practice C programming.  
@@ -66,17 +66,17 @@ The purpose of this document is to present the core concept and mechanics, while
 
 ---
 
-## Project Scope
+## Project Scope (mandatory vs bonus)
 
 <div align="center" style="display: flex; justify-content: center; gap: 20px;">
   <figure style="text-align: center;">
     <img src="https://github.com/Xanaco/42_00_Ressources/blob/main/screenshots/Cub3D_Mandatory.png" alt="Area1" width="45%">
-    <figcaption><b>Mandatory Project</b></figcaption>
+    <figcaption>Mandatory</figcaption>
   </figure>
 
   <figure style="text-align: center;">
     <img src="https://github.com/Xanaco/42_00_Ressources/blob/main/screenshots/Cub3D_Bonus.png" alt="Area2" width="45%">
-    <figcaption><b>Bonus Project</b></figcaption>
+    <figcaption>Bonus</figcaption>
   </figure>
 </div>
 
@@ -179,7 +179,7 @@ Armed only with an axe, you must demolish doors under time pressure, while avoid
 
 <div align=center>
 <img src=https://github.com/Xanaco/42_00_Ressources/blob/main/screenshots/Cub3D_Overlook.png alt=Actor1 width=30%/>
-<img src=https://github.com/Xanaco/42_00_Ressources/blob/main/screenshots/Cub3D_Danny.png alt=Actor2 width=30%/>
+<img src=https://github.com/Xanaco/42_00_Ressources/blob/main/screenshots/Cub3D_DannyT.png alt=Actor2 width=30%/>
 <img src=https://github.com/Xanaco/42_00_Ressources/blob/main/screenshots/Cub3D_Twins.png alt=Actor3 width=30%/>
 </div>
 
