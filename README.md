@@ -49,20 +49,21 @@ The purpose of this document is to present the core concept and mechanics, while
 ---
 
 ## Table of Contents
-- [Project Scope](#-project-scope)
-- [Concept](#-concept)
-- [Gameplay Loop](#-gameplay-loop)
-- [Controls](#-controls)
-- [End Game](#-end-game)
-- [Playable Character](#-playable-character)
-- [Story](#-story)
-- [Actors (NPCs & Environment)](#-actors-npcs--environment)
-  - [The Overlook Hotel](#-the-overlook-hotel-environmentantagonist-)
-  - [Danny Torrance](#-danny-torrance-pursuer)
-  - [The Grady Twins](#-the-grady-twins-controllers)
-- [Areas](#️-areas)
-- [Gamefeel & Feedback](#-gamefeel--feedback-)
-- [Objectives & Aesthetics (MDA)](#-objectives--aesthetics-mda)
+- [Project Scope (mandatory vs bonus)](#project-scope-mandatory-vs-bonus)
+- [Concept](#concept)
+- [Gameplay Loop](#gameplay-loop)
+- [Controls](#controls)
+- [End Game](#end-game)
+- [Playable Character](#playable-character)
+- [Story](#story)
+- [Actors (NPCs & Environment)](#actors-npcs--environment)
+  - [The Overlook Hotel](#the-overlook-hotel-environmentantagonist)
+  - [Danny Torrance](#danny-torrance-pursuer)
+  - [The Grady Twins](#the-grady-twins-controllers)
+- [Areas](#areas)
+- [Gamefeel & Feedback](#gamefeel--feedback)
+- [Objectives & Aesthetics (MDA)](#objectives--aesthetics-mda)
+
 
 ---
 
@@ -71,12 +72,10 @@ The purpose of this document is to present the core concept and mechanics, while
 <div align="center" style="display: flex; justify-content: center; gap: 20px;">
   <figure style="text-align: center;">
     <img src="https://github.com/Xanaco/42_00_Ressources/blob/main/screenshots/Cub3D_Mandatory.png" alt="Area1" width="45%">
-    <figcaption>Mandatory</figcaption>
   </figure>
 
   <figure style="text-align: center;">
     <img src="https://github.com/Xanaco/42_00_Ressources/blob/main/screenshots/Cub3D_Bonus.png" alt="Area2" width="45%">
-    <figcaption>Bonus</figcaption>
   </figure>
 </div>
 
